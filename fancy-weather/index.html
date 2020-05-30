@@ -10,15 +10,117 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <!-- <script
+    <script
       src="https://kit.fontawesome.com/b9d2336513.js"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
     <script src="./bundle.js"></script>
     <title>Fancy weather</title>
   </head>
 
-  <body>
+  <body class="bg-dark">
+    <div class="container-fluid mt-5">
+      <header class="d-flex flex-wrap justify-content-between align-items-center mt-2">
+        <div class="d-flex">
+          <button type="button" class="btn btn-secondary m-1 btn-outline-light" id="update-bg-image">
+            <i class="fas fa-sync fa-lg"></i>
+          </button>
+
+          <select class="custom-select bg-secondary text-light m-1">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+            <option value="be">BE</option>
+          </select>
+
+          <div class="btn-group btn-group-toggle m-1 border rounded border-light" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" checked> °F
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2"> °C
+            </label>
+          </div>
+        </div>
+
+        <form>
+          <div class="input-group d-flex">
+            <input type="text" class="form-control bg-secondary text-light" id="search-input" placeholder="Search city or ZIP"  aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-light bg-dark text-light border-left-0" type="button" id="search-button">Button</button>
+            </div>
+          </div>
+        </form>
+      </header>
+
+      <main class="d-flex flex-wrap mt-5 text-light">
+        <section class="d-flex flex-column flex-grow-1 mr-5 left-part"> 
+          <div>
+            <h1 class="font-weight-bolder text-uppercase">Minsk</h1>
+            <div> 
+              <span>Sat</span>
+              <span>29 may</span> 
+              <span>Time</span>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <div id="temperature-today" class="font-weight-bolder">10</div>
+            <div class="d-flex flex-column flex-grow-1">
+              <div id="temperature-today_today" class="bg-success w-100 h-100"> 
+                <!-- icon -->
+              </div>
+              <div class="d-flex flex-column align-items-center text-uppercase">
+                <p>overcast</p>
+                <p>feels like:</p>
+                <p>wind:</p>
+                <p>humidity:</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-around flex-wrap mt-5">
+            <div id="tomorrow" class="">
+              <div id="tomorrow-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
+              <div>
+                <div id="tomorrow-temperature" class="font-weight-bold">7</div>
+                <div id="tomorrow-icon">
+                  <!-- icon -->
+                </div>
+              </div>
+            </div>
+            <div id="tomorrow-nextDay">
+              <div id="tomorrow-nextDay-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
+              <div>
+                <div id="tomorrow-nextDay-temperature" class="font-weight-bold">7</div>
+                <div id="tomorrow-nextDay-icon">
+                  <!-- icon -->
+                </div>
+              </div>
+            </div>
+            <div id="tomorrow-next-nextDay">
+              <div id="tomorrow-next-nextDay-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
+              <div>
+                <div id="tomorrow-next-nextDay-temperature" class="font-weight-bold">7</div>
+                <div id="tomorrow-next-nextDay-icon">
+                  <!-- icon -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section  class="d-flex flex-column  flex-grow-1 ml-5"> 
+          <div id="map" class=" bg-success w-100">
+            <!-- map -->
+          </div>
+          <div class="mt-5 text-right">
+            <p>Latitude:</p>
+            <p>Longitude:</p>
+            <!-- coordinate -->
+          </div>
+        </section>
+      </main>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
