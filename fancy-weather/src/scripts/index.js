@@ -1,5 +1,13 @@
-console.log('working')
+import App from './App'
+// import getMyCity from './App/helpers/getMyCityCoords'
 
-// document.addEventListener('DOMContentLoaded', () => {
-
-// })
+document.addEventListener('DOMContentLoaded', () => {
+  // const myCoords = async () => {
+  //   const city = await getMyCity()
+  //   return city
+  // }
+  // const startPage = new App(myCoords)
+  // const startPage = new App(52.0976667, 23.6871711)
+  const startPage = new App('Minsk')
+  startPage.start()
+})

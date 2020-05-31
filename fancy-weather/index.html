@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/b9d2336513.js"
       crossorigin="anonymous"
     ></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
     <script src="./bundle.js"></script>
     <title>Fancy weather</title>
   </head>
@@ -52,7 +53,7 @@
         </form>
       </header>
 
-      <main class="d-flex flex-wrap mt-5 text-light">
+      <main class="d-flex flex-lg-row flex-sm-column flex-wrap mt-5 text-light">
         <section class="d-flex flex-column flex-grow-1 mr-5 left-part"> 
           <div>
             <h1 class="font-weight-bolder text-uppercase">Minsk</h1>
@@ -109,8 +110,8 @@
           </div>
         </section>
 
-        <section  class="d-flex flex-column  flex-grow-1 ml-5"> 
-          <div id="map" class=" bg-success w-100">
+        <section  class="d-flex flex-column  flex-grow-1"> 
+          <div id="map" class="w-100">
             <!-- map -->
           </div>
           <div class="mt-5 text-right">
