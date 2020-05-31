@@ -5,7 +5,9 @@ const DATA = {
     'pk.eyJ1Ijoid2V0ZXJvNGVrIiwiYSI6ImNrYXR6cXU2dTB5cTgyc281MnowdngybW0ifQ.mgoiVzJKrcBmZHaAGMxJcQ',
   cityName: document.getElementById('cityName'),
   latitude: document.getElementById('latitude'),
-  longitude: document.getElementById('longitude')
+  longitude: document.getElementById('longitude'),
+  searchButton: document.getElementById('search-button'),
+  searchInput: document.getElementById('search-input')
 }
 
 export default DATA
