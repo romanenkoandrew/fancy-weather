@@ -56,55 +56,43 @@
       <main class="d-flex flex-lg-row flex-sm-column flex-wrap mt-5 text-light">
         <section class="d-flex flex-column flex-grow-1 mr-5 left-part"> 
           <div>
-            <h1 id="cityName" class="font-weight-bolder text-uppercase">Minsk</h1>
-            <div id="date-today"> 
-              <!-- <span>Sat</span>
-              <span>29 may</span> 
-              <span>Time</span> -->
-            </div>
+            <h1 id="cityName" class="font-weight-bolder text-uppercase"></h1>
+            <div id="date-today"></div>
           </div>
 
           <div class="d-flex">
-            <div id="temperature-today" class="font-weight-bolder">10</div>
+            <div id="temperature-today" class="font-weight-bolder temperature"></div>
             <div class="d-flex flex-column flex-grow-1">
-              <div id="temperature-today_today" class="bg-success w-100 h-100"> 
-                <!-- icon -->
-              </div>
-              <div class="d-flex flex-column align-items-center text-uppercase">
-                <p>overcast</p>
-                <p>feels like:</p>
-                <p>wind:</p>
-                <p>humidity:</p>
+              <img class="weather-icon" src=""> 
+              <div class="d-flex flex-column align-items-center text-uppercase font-weight-bolder">
+                <p id="overcast"></p>
+                <p id="feels-like"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
               </div>
             </div>
           </div>
 
           <div class="d-flex justify-content-around flex-wrap mt-5">
             <div id="tomorrow" class="">
-              <div id="tomorrow-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
-              <div>
-                <div id="tomorrow-temperature" class="font-weight-bold">7</div>
-                <div id="tomorrow-icon">
-                  <!-- icon -->
-                </div>
+              <h2 id="tomorrow-day" class="text-uppercase font-weight-bold"></h2>
+              <div class="d-flex">
+                <div id="tomorrow-temperature" class="font-weight-bold temperature"></div>
+                <img class="weather-icon" src=""> 
               </div>
             </div>
             <div id="tomorrow-nextDay">
-              <div id="tomorrow-nextDay-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
-              <div>
-                <div id="tomorrow-nextDay-temperature" class="font-weight-bold">7</div>
-                <div id="tomorrow-nextDay-icon">
-                  <!-- icon -->
-                </div>
+              <h2 id="tomorrow-nextDay-day" class="text-uppercase font-weight-bold"></h2>
+              <div class="d-flex">
+                <div id="tomorrow-nextDay-temperature" class="font-weight-bold temperature"></div>
+                <img class="weather-icon" src=""> 
               </div>
             </div>
             <div id="tomorrow-next-nextDay">
-              <div id="tomorrow-next-nextDay-day" class="text-uppercase font-weight-bold"><h2>sunday</h2></div>
-              <div>
-                <div id="tomorrow-next-nextDay-temperature" class="font-weight-bold">7</div>
-                <div id="tomorrow-next-nextDay-icon">
-                  <!-- icon -->
-                </div>
+              <h2 id="tomorrow-next-nextDay-day" class="text-uppercase font-weight-bold"></h2>
+              <div class="d-flex">
+                <div id="tomorrow-next-nextDay-temperature" class="font-weight-bold temperature"></div>
+                <img class="weather-icon" src=""> 
               </div>
             </div>
           </div>

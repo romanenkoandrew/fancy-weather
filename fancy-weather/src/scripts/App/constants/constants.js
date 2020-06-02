@@ -9,7 +9,25 @@ const DATA = {
   longitude: document.getElementById('longitude'),
   searchButton: document.getElementById('search-button'),
   searchInput: document.getElementById('search-input'),
-  dateToday: document.getElementById('date-today')
+  dateToday: document.getElementById('date-today'),
+  overcast: document.getElementById('overcast'),
+  feelsLike: document.getElementById('feels-like'),
+  wind: document.getElementById('wind'),
+  humidity: document.getElementById('humidity'),
+  temperature: [...document.querySelectorAll('.temperature')],
+  weatherIcon: [...document.querySelectorAll('.weather-icon')],
+  tomorrowDay: document.getElementById('tomorrow-day'),
+  tomorrowDayNext: document.getElementById('tomorrow-nextDay-day'),
+  tomorrowDayNextNext: document.getElementById('tomorrow-next-nextDay-day'),
+  nameOfTheDay: [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+  ]
 }
 
 export default DATA
