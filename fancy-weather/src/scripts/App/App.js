@@ -16,16 +16,19 @@ class App {
       // console.log(myCity)
       const model = new AppModel(this.state)
       const coords = await model.getCoords()
+
       dataObj.cityLat = coords.results[0].annotations.DMS.lat
       dataObj.cityLng = coords.results[0].annotations.DMS.lng
+      dataObj.timeZone = coords.results[0].annotations.timezone.name
       dataObj.city =
         coords.results[0].components.city || coords.results[0].components.state
       dataObj.country = coords.results[0].components.country
-      // console.log('appstart', dataObj.city, dataObj.country)
+
       await getMap(
         coords.results[0].geometry.lat,
         coords.results[0].geometry.lng
       )
+
       const view = new AppView(dataObj)
       view.render()
     } catch (err) {
