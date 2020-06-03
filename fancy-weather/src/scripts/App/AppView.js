@@ -1,4 +1,5 @@
 import DATA from './constants'
+import { getBackground } from './helpers/getBackground'
 // import Clock from './helpers/Clock'
 
 class AppView {
@@ -46,6 +47,8 @@ class AppView {
     tomorrowDay.innerText = `${nameOfTheDay[this.obj.dayToday + 1]}`
     tomorrowDayNext.innerText = `${nameOfTheDay[this.obj.dayToday + 2]}`
     tomorrowDayNextNext.innerText = `${nameOfTheDay[this.obj.dayToday + 3]}`
+
+    getBackground()
   }
 
   getClock() {
@@ -64,10 +67,10 @@ class AppView {
       const { dateToday } = DATA
       dateToday.innerText = new Date().toLocaleString('en-US', options)
     }
-    const a = localStorage.getItem('interval')
-    if (a) clearInterval(a)
-    const interval = setInterval(startClock, 1000)
-    localStorage.setItem('interval', interval)
+    const interval = localStorage.getItem('interval')
+    if (interval) clearInterval(interval)
+    const newInterval = setInterval(startClock, 1000)
+    localStorage.setItem('interval', newInterval)
   }
 }
 

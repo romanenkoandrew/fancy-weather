@@ -1,5 +1,6 @@
 import App from './App'
 import searchStartHandler from './App/helpers/searchStartHandler'
+import { changeBackground } from './App/helpers/getBackground'
 // import getMyCity from './App/helpers/getMyCityCoords'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const startPage = new App('Minsk')
   startPage.start()
   searchStartHandler()
+  changeBackground()
 })
