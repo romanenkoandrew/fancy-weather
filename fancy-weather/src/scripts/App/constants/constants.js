@@ -28,7 +28,10 @@ const DATA = {
     'Thursday',
     'Friday',
     'Saturday',
-    'Sunday'
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday'
   ]
 }
 

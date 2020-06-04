@@ -33,8 +33,7 @@ class App {
 
       const weather = await model.getWeather(latitude, longitude)
 
-      const timestamp = weather.current.dt
-      dataObj.dayToday = new Date(timestamp).getDay()
+      dataObj.dayToday = new Date().getDay()
       dataObj.overcast = weather.current.weather[0].main
       dataObj.feelsLike = weather.current.feels_like.toFixed(0)
       dataObj.humidity = weather.current.humidity.toFixed(0)

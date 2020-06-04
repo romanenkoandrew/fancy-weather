@@ -34,7 +34,6 @@ class AppView {
     feelsLike.innerText = `Feels like: ${this.obj.feelsLike} °`
     wind.innerText = `wind: ${this.obj.wind} m/s`
     humidity.innerText = `humidity: ${this.obj.humidity} %`
-    console.log(this.obj.temperature)
 
     temperature.forEach((el, index) => {
       el.innerText = `${this.obj.temperature[index]}`
@@ -44,9 +43,9 @@ class AppView {
       el.src = `http://openweathermap.org/img/wn/${this.obj.weatherIcon[index]}@2x.png`
     })
 
-    tomorrowDay.innerText = `${nameOfTheDay[this.obj.dayToday + 1]}`
-    tomorrowDayNext.innerText = `${nameOfTheDay[this.obj.dayToday + 2]}`
-    tomorrowDayNextNext.innerText = `${nameOfTheDay[this.obj.dayToday + 3]}`
+    tomorrowDay.innerText = `${nameOfTheDay[this.obj.dayToday]}`
+    tomorrowDayNext.innerText = `${nameOfTheDay[this.obj.dayToday + 1]}`
+    tomorrowDayNextNext.innerText = `${nameOfTheDay[this.obj.dayToday + 2]}`
 
     getBackground()
   }
