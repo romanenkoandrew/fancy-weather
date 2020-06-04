@@ -8,7 +8,7 @@ const getMyCity = async () => {
     const { loc } = await data
     return loc
   } catch (err) {
-    return console.log('getMyCity:', Error(err))
+    return console.log('Please, disable IP block\n', Error(err))
   }
 }
 

@@ -1,4 +1,3 @@
-// import getMyCity from './helpers/getMyCityCoords'
 import AppModel from './AppModel'
 import getMap from './helpers/getMap'
 import AppView from './AppView'
@@ -13,9 +12,6 @@ class App {
     try {
       preloader(false)
       const dataObj = {}
-
-      // const myCity = await getMyCity()
-      // console.log(myCity)
       const model = new AppModel(this.state)
       const coords = await model.getCoords()
 
