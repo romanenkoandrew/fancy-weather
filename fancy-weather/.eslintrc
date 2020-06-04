@@ -15,8 +15,7 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
-    
+    "ecmaVersion": 2018
   },
   "rules": {
     "eqeqeq": ["error", "always"],
@@ -27,6 +26,7 @@
         "props": false
       }
     ],
+    "no-unused-expressions": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",

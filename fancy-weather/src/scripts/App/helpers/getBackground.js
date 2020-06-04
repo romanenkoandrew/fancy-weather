@@ -54,8 +54,8 @@ const getBackground = async () => {
     loadImage(regular)
     return true
   } catch (err) {
-    body('./assets/img/defaultImage.jpg')
-    return console.log('Something going wrong, loading default image')
+    loadImage('./assets/img/defaultImage.jpg')
+    return console.log(err, 'loading default image')
   }
 }
 

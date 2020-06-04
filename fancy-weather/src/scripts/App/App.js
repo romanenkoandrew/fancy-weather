@@ -2,6 +2,7 @@
 import AppModel from './AppModel'
 import getMap from './helpers/getMap'
 import AppView from './AppView'
+import preloader from './helpers/preloader'
 
 class App {
   constructor(...args) {
@@ -10,6 +11,7 @@ class App {
 
   async start() {
     try {
+      preloader(false)
       const dataObj = {}
       // console.log('appstart', this.state)
       // const myCity = await getMyCity()
@@ -51,9 +53,9 @@ class App {
         (dataObj.tomorrowNextIcon = weather.daily[1].weather[0].icon),
         (dataObj.tomorrowNextNextIcon = weather.daily[2].weather[0].icon)
       ]
-
       const view = new AppView(dataObj)
       view.render()
+      preloader(true)
     } catch (err) {
       throw Error(err)
     }
