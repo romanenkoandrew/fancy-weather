@@ -13,7 +13,7 @@ class App {
     try {
       preloader(false)
       const dataObj = {}
-      // console.log('appstart', this.state)
+
       // const myCity = await getMyCity()
       // console.log(myCity)
       const model = new AppModel(this.state)
