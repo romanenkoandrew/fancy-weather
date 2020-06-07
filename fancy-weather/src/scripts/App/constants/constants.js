@@ -21,6 +21,8 @@ const DATA = {
   tomorrowDayNext: document.getElementById('tomorrow-nextDay-day'),
   tomorrowDayNextNext: document.getElementById('tomorrow-next-nextDay-day'),
   changeBackgroundImage: document.getElementById('update-bg-image'),
+  fahrenheitButton: document.getElementById('toFahrenheit'),
+  celsiusButton: document.getElementById('toCelsius'),
   nameOfTheDay: [
     'Monday',
     'Tuesday',

@@ -21,8 +21,19 @@ class AppView {
       tomorrowDayNextNext,
       nameOfTheDay,
       temperature,
-      weatherIcon
+      weatherIcon,
+      fahrenheitButton,
+      celsiusButton
     } = DATA
+
+    const degree = localStorage.getItem('degree')
+    if (degree === 'fahr') {
+      celsiusButton.classList.remove('active')
+      fahrenheitButton.classList.add('active')
+    } else {
+      fahrenheitButton.classList.remove('active')
+      celsiusButton.classList.add('active')
+    }
 
     cityName.innerText = `${this.obj.city}, ${this.obj.country}`
     latitude.innerText = `Latitude: ${this.obj.cityLat}`

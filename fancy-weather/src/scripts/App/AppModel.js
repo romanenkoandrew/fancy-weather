@@ -21,7 +21,9 @@ class AppModel {
     try {
       console.log(this.value)
       const { WEATHER_TOKEN } = DATA
-      const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=metric&appid=${WEATHER_TOKEN}`
+      const degree = localStorage.getItem('degree')
+      const units = degree === 'fahr' ? 'imperial' : 'metric'
+      const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=${units}&appid=${WEATHER_TOKEN}`
       const response = await fetch(url)
       const data = await response.json()
       return data
