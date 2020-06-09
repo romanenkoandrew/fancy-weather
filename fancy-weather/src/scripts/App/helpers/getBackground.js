@@ -49,7 +49,7 @@ const getBackground = async () => {
     const url = `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&w=800&query=${season},${location}&client_id=${UNSPLASH_TOKEN}`
     const response = await fetch(url)
     const data = await response.json()
-    const regular = await data.urls.regular
+    const regular = await data?.urls?.regular
     console.log('season:', season, 'location:', location)
     loadImage(regular)
     return true

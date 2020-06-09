@@ -3,6 +3,7 @@ import DATA from './constants'
 class AppModel {
   constructor(value) {
     this.value = value
+    this.degree = localStorage.getItem('degree')
   }
 
   async getCoords() {
@@ -19,10 +20,8 @@ class AppModel {
 
   async getWeather(latitude, longitude) {
     try {
-      console.log(this.value)
       const { WEATHER_TOKEN } = DATA
-      const degree = localStorage.getItem('degree')
-      const units = degree === 'fahr' ? 'imperial' : 'metric'
+      const units = this.degree === 'fahr' ? 'imperial' : 'metric'
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=${units}&appid=${WEATHER_TOKEN}`
       const response = await fetch(url)
       const data = await response.json()
