@@ -21,9 +21,9 @@
   &::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 5px solid white;
+    width: 25px;
+    height: 25px;
+    border: 6px solid white;
     border-radius: 50%;
     top: 60px;
   }
@@ -60,5 +60,19 @@
 @media (max-width: 576px) {
   .big-icon {
     width: 145px;
+  }
+  #temperature-today {
+    font-size: 8rem;
+    &::after {
+      top: 40px;
+    }
+  }
+  #tomorrow-temperature,
+  #tomorrow-nextDay-temperature,
+  #tomorrow-next-nextDay-temperature {
+  font-size: 3rem;
+    &::after {
+      top: 10px;
+    }
   }
 }
