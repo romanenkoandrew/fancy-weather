@@ -10,8 +10,8 @@ class AppModel {
     try {
       const { GEOCODING_TOKEN } = DATA
       const url = `https://api.opencagedata.com/geocode/v1/json?q=${this.value}&key=${GEOCODING_TOKEN}&pretty=1&limit=1&language=en`
-      const responceData = await fetch(url)
-      const data = await responceData.json()
+      const responseData = await fetch(url)
+      const data = await responseData.json()
       return data
     } catch (err) {
       return Error(err)

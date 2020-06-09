@@ -16,28 +16,25 @@ class Clock {
     this.parentElement = dateToday
   }
 
-  renderClock() {
+  render() {
     this.element = document.createElement('span')
     this.element.innerText = new Date().toLocaleString('en-US', this.options)
     this.parentElement.appendChild(this.element)
   }
 
-  startClock() {
+  start() {
     if (this.interval) return
     this.interval = setInterval(() => {
       this.element.innerText = new Date().toLocaleString('en-US', this.options)
     }, 1000)
   }
 
-  stopClock() {
-    clearInterval(this.interval)
-  }
-
   changeTimeZone(value) {
     this.options.timeZone = value
   }
 
-  deleteClock() {
+  delete() {
+    clearInterval(this.interval)
     this.parentElement.firstElementChild.remove()
   }
 }

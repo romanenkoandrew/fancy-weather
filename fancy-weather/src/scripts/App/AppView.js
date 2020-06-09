@@ -42,12 +42,11 @@ class AppView {
 
     const clock = new Clock()
     if (dateToday.children.length) {
-      clock.deleteClock()
+      clock.delete()
     }
     clock.changeTimeZone(this.obj.timeZone)
-    clock.renderClock()
-    clock.stopClock()
-    clock.startClock()
+    clock.render()
+    clock.start()
 
     overcast.innerText = `${this.obj.overcast}`
     feelsLike.innerText = `Feels like: ${this.obj.feelsLike} °`

@@ -47,9 +47,9 @@ class App {
 
       dataObj.weatherIcon = [
         weather?.current?.weather[0]?.icon,
-        (dataObj.tomorrowIcon = weather?.daily[0]?.weather[0]?.icon),
-        (dataObj.tomorrowNextIcon = weather?.daily[1]?.weather[0]?.icon),
-        (dataObj.tomorrowNextNextIcon = weather?.daily[2]?.weather[0]?.icon)
+        weather?.daily[0]?.weather[0]?.icon,
+        weather?.daily[1]?.weather[0]?.icon,
+        weather?.daily[2]?.weather[0]?.icon
       ]
       const view = new AppView(dataObj)
       view.render()
