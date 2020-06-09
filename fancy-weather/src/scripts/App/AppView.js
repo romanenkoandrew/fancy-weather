@@ -1,6 +1,6 @@
 import DATA from './constants'
 import { getBackground } from './helpers/getBackground'
-// import Clock from './helpers/Clock'
+import Clock from './helpers/Clock'
 
 class AppView {
   constructor(obj) {
@@ -23,7 +23,8 @@ class AppView {
       temperature,
       weatherIcon,
       fahrenheitButton,
-      celsiusButton
+      celsiusButton,
+      dateToday
     } = DATA
 
     const degree = localStorage.getItem('degree')
@@ -39,7 +40,14 @@ class AppView {
     latitude.innerText = `Latitude: ${this.obj.cityLat}`
     longitude.innerText = `Longitude: ${this.obj.cityLng}`
 
-    this.getClock()
+    const clock = new Clock()
+    if (dateToday.children.length) {
+      clock.deleteClock()
+    }
+    clock.changeTimeZone(this.obj.timeZone)
+    clock.renderClock()
+    clock.stopClock()
+    clock.startClock()
 
     overcast.innerText = `${this.obj.overcast}`
     feelsLike.innerText = `Feels like: ${this.obj.feelsLike} °`
@@ -59,28 +67,6 @@ class AppView {
     tomorrowDayNextNext.innerText = `${nameOfTheDay[this.obj.dayToday + 2]}`
 
     getBackground()
-  }
-
-  getClock() {
-    const options = {
-      timeZone: this.obj.timeZone,
-      weekday: 'short',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      hour12: false
-    }
-
-    function startClock() {
-      const { dateToday } = DATA
-      dateToday.innerText = new Date().toLocaleString('en-US', options)
-    }
-    const interval = localStorage.getItem('interval')
-    if (interval) clearInterval(interval)
-    const newInterval = setInterval(startClock, 1000)
-    localStorage.setItem('interval', newInterval)
   }
 }
 

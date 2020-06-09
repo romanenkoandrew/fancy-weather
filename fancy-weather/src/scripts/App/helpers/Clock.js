@@ -1,41 +1,45 @@
-// import DATA from '../constants'
+import DATA from '../constants'
 
-// class Clock {
-//   constructor(zone) {
-//     this.options = {
-//       timeZone: zone,
-//       weekday: 'short',
-//       day: 'numeric',
-//       month: 'long',
-//       hour: 'numeric',
-//       minute: 'numeric',
-//       second: 'numeric',
-//       hour12: false
-//     }
-//     this.timerObj = setInterval(this.startClock, 1000)
-//     // this.fn = fn
-//     // this.t = t
-//     // this.dateToday = DATA.dateToday
-//   }
+const { dateToday } = DATA
+class Clock {
+  constructor() {
+    this.options = {
+      timeZone: '',
+      weekday: 'short',
+      day: 'numeric',
+      month: 'long',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: false
+    }
+    this.parentElement = dateToday
+  }
 
-//   startClock() {
-//     const { dateToday } = DATA
-//     dateToday.innerText = new Date().toLocaleString('en-US', this.options)
-//   }
+  renderClock() {
+    this.element = document.createElement('span')
+    this.element.innerText = new Date().toLocaleString('en-US', this.options)
+    this.parentElement.appendChild(this.element)
+  }
 
-//   timeStop() {
-//     if (this.timerObj) {
-//       clearInterval(this.timerObj)
-//       this.timerObj = null
-//     }
-//     // return this
-//   }
+  startClock() {
+    if (this.interval) return
+    this.interval = setInterval(() => {
+      this.element.innerText = new Date().toLocaleString('en-US', this.options)
+    }, 1000)
+  }
 
-//   timeStart() {
-//     this.timeStop()
-//     this.timerObj = setInterval(this.startClock, 1000)
-//     // return this
-//   }
-// }
+  stopClock() {
+    clearInterval(this.interval)
+  }
 
-// export default Clock
+  changeTimeZone(value) {
+    this.options.timeZone = value
+  }
+
+  deleteClock() {
+    this.parentElement.firstElementChild.remove()
+  }
+}
+
+export default Clock
